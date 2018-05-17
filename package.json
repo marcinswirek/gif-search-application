@@ -1,0 +1,59 @@
+{
+    "name": "learning-git-2",
+    "version": "1.0.0",
+    "description": "https://swirek-marcin.github.io/learning-git-2/",
+    "main": "index.js",
+    "scripts": {
+        "start": "http-server",
+        "start-demon": "nodemon index.js",
+        "test": "npm-run-all test:*",
+        "test:html": "globstar nu-html-checker *.html",
+        "init-project": "npm install && npm-run-all init:*",
+        "init:dirs": "mkdirp sass css vendor images js components",
+        "init:files": "touch README.md index.html sass/style.scss js/script.js",
+        "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
+        "build": "npm-run-all build:* test",
+        "build:clean": "rimraf css/*.css",
+        "build:sass": "node-sass --output-style compact -o css sass",
+        "build:autoprefixer": "autoprefixer-cli css/style.css",
+        "build-dev:sass": "node-sass --output-style expanded --source-map true -o css sass",
+        "watch": "npm-run-all build -p watch:*",
+        "watch:sassprefixer": "onchange sass/*.scss *.html -- npm-run-all sassprefixer:*",
+        "sassprefixer:sass": "node-sass --output-style compact --source-map true -o css sass",
+        "sassprefixer:autoprefixer": "autoprefixer-cli css/style.css",
+        "watch:browser-sync": "node_modules/.bin/browser-sync start --server --files \"css/*.css,index.html, js/*.js\" --browser \"chrome\" "
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/swirek-marcin/learning-git-2.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/swirek-marcin/learning-git-2/issues"
+    },
+    "homepage": "https://github.com/swirek-marcin/learning-git-2#readme",
+    "devDependencies": {
+        "autoprefixer-cli": "^1.0.0",
+        "browser-sync": "^2.23.6",
+        "globstar": "^1.0.0",
+        "http-server": "^0.11.1",
+        "node-sass": "^4.8.3",
+        "node-sass-chokidar": "^1.2.1",
+        "npm-run-all": "^4.1.2",
+        "nu-html-checker": "^0.1.0",
+        "onchange": "^3.3.0"
+    },
+    "dependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-polyfill": "^6.26.0",
+        "babel-preset-env": "^1.7.0",
+        "babel-standalone": "^6.26.0",
+        "colors": "^1.2.4",
+        "mkdirp": "^0.5.1",
+        "nodemon": "^1.17.4",
+        "rifraf": "^2.0.3",
+        "rimraf": "^2.6.2"
+    }
+}
