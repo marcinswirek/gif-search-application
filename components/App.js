@@ -1,4 +1,4 @@
-var GIPHY_API_URL = "http://api.giphy.com";
+var GIPHY_API_URL = "https://api.giphy.com";
 var GIPHY_PUB_KEY = "q4k1xiFfyXHFEVGeG4SYB8VJsIA5OtQu";
 
 App = React.createClass({
@@ -15,7 +15,6 @@ App = React.createClass({
   // 2. HandleSearch method sets state loading to true and calls getGif function. The parameter of function is searchingText an callback. Receive gif object as callback and sets new states after receiving gif
 
   handleSearch: function(searchingText) {
-    // a) sets state loading to true - shows loading gif
 
     this.setState({
       loading: true
@@ -88,7 +87,7 @@ App = React.createClass({
       <div style={styles}>
         <h1>Wyszukiwarka Gifów</h1>
         <p>
-          Znajdź gifa na <a href="'http://giphy.com">giphy</a> Naciskaj Enter,
+          Znajdź gifa na <a href="'https://giphy.com">giphy</a> Naciskaj Enter,
           aby pobrać kolejne gify.
         </p>
         <Search onSearch={this.handleSearch} />
