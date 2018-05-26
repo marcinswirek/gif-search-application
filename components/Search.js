@@ -37,16 +37,21 @@ Search = React.createClass({
     }
   },
 
-  /*4. Render method  */
+  // 4. Render method
 
-  /* onChange={this.handleChange} means "on onChange (input React event) run hendleChange method"*/
-  /* onKeyUp={this.handleKeyUp} means "onkeyUp event (keyboard React event) run handleKeyUp method */
+  // onChange={this.handleChange} onChange (input React event) run hendleChange method
+  // onKeyUp={this.handleKeyUp} onkeyUp event (keyboard React event) run handleKeyUp method
 
   render: function() {
     var styles = {
       fontSize: "1,5em",
       width: "90%",
-      maxWidth: "350px"
+      maxWidth: "350px",
+      border: "none",
+      borderRadius: "5px",
+      boxShadow: "0 0 8px black",
+      height: "40px",
+      width: "350px"
     };
 
     return (

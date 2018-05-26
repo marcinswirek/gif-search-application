@@ -14,7 +14,7 @@ Gif = React.createClass({
   //2. render method
 
   render: function() {
-    /* In depeends on value of loading state returns Gif element containing gif from giphy.com (then loading is false) or loading gif (then loading is true)   */
+    // In depeends on value of loading state returns Gif element containing gif from giphy.com (then loading is false) or loading gif (then loading is true)
 
     var url = this.props.loading ? GIPHY_LOADING_URL : this.props.url;
 

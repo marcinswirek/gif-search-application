@@ -1,6 +1,36 @@
-@import url("https://fonts.googleapis.com/css?family=Raleway");
+@import url("https://fonts.googleapis.com/css?family=Raleway|Quicksand");
 
+// Variables
+$black: black;
+$grey: grey;
+$ivory: ivory;
+
+// Content
 body {
-  font-family: "Raleway";
-  background-color: grey;
+  font-family: "Raleway", "Quicksand", "Helvetica", sans-serif;
+  background-image: url("../images/bck.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-color: $grey;
+  text-shadow: 0 0 5px $black;
+}
+
+span {
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+p,
+h1 {
+  color: $ivory;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+a {
+  text-decoration: none;
+  color: $ivory;
 }
