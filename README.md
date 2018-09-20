@@ -1,4 +1,4 @@
-# zadanie-15-5
+gif-search-application
 
 https://swirek-marcin.github.io/zadanie-15-5/
 
